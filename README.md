@@ -1,7 +1,7 @@
 # SB_DESeq2_analysis_for_differential_gene_expression
-## **🧬 DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
+## 🧬 DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)
 
-📌 Overview
+### 📌 Overview
 
 This project implements a reproducible RNA-seq differential gene expression (DGE) analysis pipeline using DESeq2 in R.
 The analysis evaluates transcriptional changes induced by dexamethasone treatment, starting from raw read counts and ending with statistically validated results and publication-ready visualizations.
