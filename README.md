@@ -1,6 +1,6 @@
-🧬 **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
+# 🧬 **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
 
-📌 **Overview**
+## 📌 **Overview**
 
 This project implements a reproducible RNA-seq differential gene expression (DGE) analysis pipeline using DESeq2 in R.
 The analysis evaluates transcriptional changes induced by dexamethasone treatment, starting from raw read counts and ending with statistically validated results and publication-ready visualizations.
@@ -12,7 +12,7 @@ The analysis evaluates transcriptional changes induced by dexamethasone treatmen
 - Reproducibility
 - Clear documentation of challenges and solutions
 
-🗂️ **Project Structure**
+## 🗂️ **Project Structure**
 ├── analysis_script.R # Complete DESeq2 analysis & visualization pipeline
 ├── counts_data.csv # Raw gene count matrix
 ├── sample_info.csv # Sample metadata
@@ -27,13 +27,13 @@ text
 
 *Note: All analyses were executed from a single R script to ensure reproducibility.*
 
-⚙️ **Installation**
+## ⚙️ **Installation**
 
-🖥️ **System Requirements**
+### 🖥️ **System Requirements**
 - R ≥ 4.0
 - RStudio (recommended)
 
-📦 **Required R Packages**
+### 📦 **Required R Packages**
 ```r
 install.packages(c("tidyverse", "ggplot2", "pheatmap", "RColorBrewer", "ashr"))
 
@@ -46,6 +46,7 @@ BiocManager::install(c(
   "org.Hs.eg.db",
   "DEGreport"
 ))
+
 ▶️ Usage
 
 1. Place input files in the project directory:
