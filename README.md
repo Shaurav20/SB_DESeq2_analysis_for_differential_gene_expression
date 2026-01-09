@@ -48,18 +48,6 @@ BiocManager::install(c(
 ))
 
 ▶️ Usage
-Step 1: Place input files in the project directory
-counts_data.csv
-
-sample_info.csv
-
-▶️ Usage
-Step 1: Place input files in the project directory
-counts_data.csv
-
-sample_info.csv
-
-▶️ Usage
 
 1. Place input files in the project directory:
 
