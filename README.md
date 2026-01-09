@@ -23,8 +23,6 @@ The analysis evaluates transcriptional changes induced by dexamethasone treatmen
 ├── README.md # Project documentation
 └── LICENSE # MIT License
 
-text
-
 *Note: All analyses were executed from a single R script to ensure reproducibility.*
 
 ## ⚙️ **Installation**
@@ -34,7 +32,7 @@ text
 - RStudio (recommended)
 
 ### 📦 **Required R Packages**
-```r
+
 install.packages(c("tidyverse", "ggplot2", "pheatmap", "RColorBrewer", "ashr"))
 
 if (!require("BiocManager", quietly = TRUE))
@@ -47,33 +45,34 @@ BiocManager::install(c(
   "DEGreport"
 ))
 
-▶️ Usage
+## ▶️ **Usage**
 
-1. Place input files in the project directory:
+### 1. Place input files in the project directory:
 
 counts_data.csv
 
 sample_info.csv
 
-2. Set working directory:
+### 2. Set working directory:
 
 r
 setwd("path/to/project")
-3. Run the analysis:
+
+### 3. Run the analysis:
 
 r
 source("analysis_script.R")
 Outputs will be automatically saved in the results/ directory.
 
-🧪 Methodology
+## 🧪 Methodology
 
-Data Validation
+### Data Validation
 
 Matching samples between counts and metadata
 
 Column reordering if necessary
 
-DESeq2 Workflow
+### DESeq2 Workflow
 
 DESeqDataSet construction
 
@@ -81,13 +80,13 @@ Library size and dispersion estimation
 
 Differential expression testing
 
-Filtering & Normalization
+### Filtering & Normalization
 
 Low-count gene filtering
 
 Variance Stabilizing Transformation (VST)
 
-Visualization
+### Visualization
 
 PCA
 
@@ -99,15 +98,15 @@ Volcano plot
 
 Heatmap of top 50 DEGs
 
-Gene Annotation
+### Gene Annotation
 
 Ensembl ID → Gene symbol mapping (human)
 
-📊 Results
+## 📊 Results
 
-📈 Generated Outputs
+### 📈 Generated Outputs
 
-Figures (PNG):
+**Figures (PNG):**
 
 PCA plot
 
@@ -119,7 +118,7 @@ Volcano plot
 
 Heatmap of top 50 differentially expressed genes
 
-Tables (CSV):
+**Tables (CSV):**
 
 Complete DESeq2 results
 
@@ -129,7 +128,7 @@ Annotated DE results
 
 Normalized expression matrix
 
-Logs:
+**Logs:**
 
 R session information
 
@@ -137,35 +136,35 @@ Analysis summaries
 
 All outputs are stored in the results/ directory.
 
-🛠️ Problems Encountered and Solutions
+## 🛠️ Problems Encountered and Solutions
 
-❌ Problem 1: Noisy differential expression results
+### ❌ Problem 1: Noisy differential expression results
 
 Low-count genes caused unstable fold changes and weak clustering.
 
-✅ Solution
-
-r
-# Applied gene filtering
+**✅ Solution**
+Applied gene filtering
 keep <- rowSums(counts(dds) >= 10) >= 3
 
-# Used VST normalization  
+Used VST normalization  
 vsd <- vst(dds, blind = FALSE)
-Outcome: Cleaner PCA separation and more biologically meaningful DE genes.
 
-❌ Problem 2: Blank heatmap image files
+**Outcome:** 
+Cleaner PCA separation and more biologically meaningful DE genes.
+
+### ❌ Problem 2: Blank heatmap image files
 
 The heatmaps were saved as empty PNG files.
 
 Root Cause: pheatmap() uses grid graphics, which require explicit rendering.
 
-✅ Solution
-
-r
+**✅ Solution**
 grid::grid.newpage()
-Outcome: Heatmaps rendered correctly and reproducibly.
 
-📚 References
+**Outcome:** 
+Heatmaps rendered correctly and reproducibly.
+
+## 📚 References
 
 Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 2014.
 
@@ -173,10 +172,11 @@ R Core Team (2024). R: A language and environment for statistical computing. htt
 
 Bioconductor Project. https://bioconductor.org/
 
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this code with appropriate attribution.
 
-👤 Author
+## 👤 Author
 
 Shaurav Bhattacharyya
+

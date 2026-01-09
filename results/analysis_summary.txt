@@ -1,0 +1,14 @@
+DESeq2 Analysis Summary
+=====================
+
+Date: Fri Jan  9 21:51:02 2026 
+
+Input Data:
+- Number of samples: 8 
+- Number of genes before filtering: 64102 
+- Number of genes after filtering: 16596 
+
+Differential Expression Results:
+- Total significant genes (padj < 0.05): 2782 
+- Up-regulated (padj < 0.05 & LFC > 1): 448 
+- Down-regulated (padj < 0.05 & LFC < -1): 380 
