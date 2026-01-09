@@ -10,9 +10,7 @@ The workflow prioritizes:
 - Statistical rigor  
 - Biological interpretability  
 - Reproducibility  
-- Clear documentation of challenges and solutions  
-
----
+- Clear documentation of challenges and solutions
 
 ## 🗂️ Project Structure
 
@@ -27,8 +25,6 @@ The workflow prioritizes:
 └── LICENSE # MIT License
 
 > **Note:** All analyses were executed from a single R script to ensure reproducibility.
-
----
 
 ## ⚙️ Installation
 
@@ -52,25 +48,25 @@ BiocManager::install(c(
   "DEGreport"
 ))
 
-🧪 Methodology
-Data Validation
+## 🧪 Methodology
+### Data Validation
 Matching samples between count matrix and metadata
 
 Column reordering if necessary
 
-DESeq2 Workflow
+### DESeq2 Workflow
 DESeqDataSet construction
 
 Library size and dispersion estimation
 
 Differential expression testing
 
-Filtering & Normalization
+### Filtering & Normalization
 Low-count gene filtering
 
 Variance Stabilizing Transformation (VST)
 
-Visualization
+### Visualization
 PCA
 
 Sample distance heatmap
@@ -81,10 +77,10 @@ Volcano plot
 
 Heatmap of top 50 DEGs
 
-Gene Annotation
+### Gene Annotation
 Ensembl ID → Gene symbol mapping (human)
 
-▶️ Usage
+## ▶️ Usage
 Place input files in the project directory:
 
 counts_data.csv
@@ -99,9 +95,9 @@ Run the analysis:
 source("analysis_script.R")
 Outputs will be automatically saved in the results/ directory.
 
-📊 Results
-📈 Generated Outputs
-Figures (PNG)
+## 📊 Results
+### 📈 Generated Outputs
+**Figures (PNG)**
 PCA plot
 
 Sample distance heatmap
@@ -112,7 +108,7 @@ Volcano plot
 
 Heatmap of top 50 differentially expressed genes
 
-Tables (CSV)
+**Tables (CSV)**
 Complete DESeq2 results
 
 Significant DE genes
@@ -121,40 +117,40 @@ Annotated DE results
 
 Normalized expression matrix
 
-Logs
+**Logs**
 R session information
 
 Analysis summaries
 
 All outputs are stored in the results/ directory.
 
-🛠️ Problems Encountered and Solutions
-❌ Problem 1: Noisy differential expression results
+## 🛠️ Problems Encountered and Solutions
+### ❌ Problem 1: Noisy differential expression results
 Low-count genes caused unstable fold changes and weak clustering.
 
-✅ Solution
+**✅ Solution**
 Applied gene filtering:
 
 keep <- rowSums(counts(dds) >= 10) >= 3
 Used VST normalization:
 
 vsd <- vst(dds, blind = FALSE)
-Outcome:
+**Outcome:**
 Cleaner PCA separation and more biologically meaningful DE genes.
 
-❌ Problem 2: Blank heatmap image files
+### ❌ Problem 2: Blank heatmap image files
 Heatmaps were saved as empty PNG files.
 
 Root Cause:
 pheatmap() uses grid graphics, which require explicit rendering.
 
-✅ Solution
+**✅ Solution**
 
 grid::grid.newpage()
-Outcome:
+**Outcome:**
 Heatmaps rendered correctly and reproducibly.
 
-📚 References
+## 📚 References
 Love MI, Huber W, Anders S.
 Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.
 Genome Biology, 2014.
@@ -166,9 +162,9 @@ https://www.r-project.org/
 Bioconductor Project
 https://bioconductor.org/
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this code with appropriate attribution.
 
-👤 Author
+## 👤 Author
 Shaurav Bhattacharyya
