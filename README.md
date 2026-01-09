@@ -1,5 +1,5 @@
 # SB_DESeq2_analysis_for_differential_gene_expression
-🧬 DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)
+## 🧬 DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)
 
 📌 Overview
 
