@@ -1,19 +1,18 @@
-# SB_DESeq2_analysis_for_differential_gene_expression
+🧬 **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
 
-## 📌 Overview
+📌 **Overview**
 
-This project implements a **reproducible RNA-seq differential gene expression (DGE) analysis pipeline** using **DESeq2** in R.  
-The analysis evaluates transcriptional changes induced by **dexamethasone treatment**, starting from raw read counts and ending with statistically validated results and publication-ready visualizations.
+This project implements a reproducible RNA-seq differential gene expression (DGE) analysis pipeline using DESeq2 in R.
+The analysis evaluates transcriptional changes induced by dexamethasone treatment, starting from raw read counts and ending with statistically validated results and publication-ready visualizations.
 
-The workflow prioritizes:
+**The workflow prioritizes:**
 
-- Statistical rigor  
+- Statistical rigor
 - Biological interpretability  
-- Reproducibility  
+- Reproducibility
 - Clear documentation of challenges and solutions
 
-## 🗂️ Project Structure
-
+🗂️ **Project Structure**
 ├── analysis_script.R # Complete DESeq2 analysis & visualization pipeline
 ├── counts_data.csv # Raw gene count matrix
 ├── sample_info.csv # Sample metadata
@@ -24,17 +23,17 @@ The workflow prioritizes:
 ├── README.md # Project documentation
 └── LICENSE # MIT License
 
-> **Note:** All analyses were executed from a single R script to ensure reproducibility.
+text
 
-## ⚙️ Installation
+*Note: All analyses were executed from a single R script to ensure reproducibility.*
 
-### 🖥️ System Requirements
+⚙️ **Installation**
 
-- R ≥ 4.0  
+🖥️ **System Requirements**
+- R ≥ 4.0
 - RStudio (recommended)
 
-### 📦 Required R Packages
-
+📦 **Required R Packages**
 ```r
 install.packages(c("tidyverse", "ggplot2", "pheatmap", "RColorBrewer", "ashr"))
 
@@ -47,26 +46,48 @@ BiocManager::install(c(
   "org.Hs.eg.db",
   "DEGreport"
 ))
+▶️ Usage
 
-## 🧪 Methodology
-### Data Validation
-Matching samples between count matrix and metadata
+1. Place input files in the project directory:
+
+counts_data.csv
+
+sample_info.csv
+
+2. Set working directory:
+
+r
+setwd("path/to/project")
+3. Run the analysis:
+
+r
+source("analysis_script.R")
+Outputs will be automatically saved in the results/ directory.
+
+🧪 Methodology
+
+Data Validation
+
+Matching samples between counts and metadata
 
 Column reordering if necessary
 
-### DESeq2 Workflow
+DESeq2 Workflow
+
 DESeqDataSet construction
 
 Library size and dispersion estimation
 
 Differential expression testing
 
-### Filtering & Normalization
+Filtering & Normalization
+
 Low-count gene filtering
 
 Variance Stabilizing Transformation (VST)
 
-### Visualization
+Visualization
+
 PCA
 
 Sample distance heatmap
@@ -77,27 +98,16 @@ Volcano plot
 
 Heatmap of top 50 DEGs
 
-### Gene Annotation
+Gene Annotation
+
 Ensembl ID → Gene symbol mapping (human)
 
-## ▶️ Usage
-Place input files in the project directory:
+📊 Results
 
-counts_data.csv
+📈 Generated Outputs
 
-sample_info.csv
+Figures (PNG):
 
-Set the working directory:
-
-setwd("path/to/project")
-Run the analysis:
-
-source("analysis_script.R")
-Outputs will be automatically saved in the results/ directory.
-
-## 📊 Results
-### 📈 Generated Outputs
-**Figures (PNG)**
 PCA plot
 
 Sample distance heatmap
@@ -108,7 +118,8 @@ Volcano plot
 
 Heatmap of top 50 differentially expressed genes
 
-**Tables (CSV)**
+Tables (CSV):
+
 Complete DESeq2 results
 
 Significant DE genes
@@ -117,54 +128,54 @@ Annotated DE results
 
 Normalized expression matrix
 
-**Logs**
+Logs:
+
 R session information
 
 Analysis summaries
 
 All outputs are stored in the results/ directory.
 
-## 🛠️ Problems Encountered and Solutions
-### ❌ Problem 1: Noisy differential expression results
+🛠️ Problems Encountered and Solutions
+
+❌ Problem 1: Noisy differential expression results
+
 Low-count genes caused unstable fold changes and weak clustering.
 
-**✅ Solution**
-Applied gene filtering:
+✅ Solution
 
+r
+# Applied gene filtering
 keep <- rowSums(counts(dds) >= 10) >= 3
-Used VST normalization:
 
+# Used VST normalization  
 vsd <- vst(dds, blind = FALSE)
-**Outcome:**
-Cleaner PCA separation and more biologically meaningful DE genes.
+Outcome: Cleaner PCA separation and more biologically meaningful DE genes.
 
-### ❌ Problem 2: Blank heatmap image files
-Heatmaps were saved as empty PNG files.
+❌ Problem 2: Blank heatmap image files
 
-Root Cause:
-pheatmap() uses grid graphics, which require explicit rendering.
+The heatmaps were saved as empty PNG files.
 
-**✅ Solution**
+Root Cause: pheatmap() uses grid graphics, which require explicit rendering.
 
+✅ Solution
+
+r
 grid::grid.newpage()
-**Outcome:**
-Heatmaps rendered correctly and reproducibly.
+Outcome: Heatmaps rendered correctly and reproducibly.
 
-## 📚 References
-Love MI, Huber W, Anders S.
-Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.
-Genome Biology, 2014.
+📚 References
 
-R Core Team (2024).
-R: A language and environment for statistical computing.
-https://www.r-project.org/
+Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 2014.
 
-Bioconductor Project
-https://bioconductor.org/
+R Core Team (2024). R: A language and environment for statistical computing. https://www.r-project.org/
 
-## 📜 License
-This project is licensed under the MIT License.
-You are free to use, modify, and distribute this code with appropriate attribution.
+Bioconductor Project. https://bioconductor.org/
 
-## 👤 Author
+📜 License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute this code with appropriate attribution.
+
+👤 Author
+
 Shaurav Bhattacharyya
