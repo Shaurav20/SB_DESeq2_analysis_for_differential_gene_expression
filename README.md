@@ -1,4 +1,4 @@
-# 🧬 **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
+# **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
 
 ## 📌 **Overview**
 
