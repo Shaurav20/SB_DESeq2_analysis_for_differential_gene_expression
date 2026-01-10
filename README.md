@@ -13,17 +13,6 @@ The analysis evaluates transcriptional changes induced by dexamethasone treatmen
 - Clear documentation of challenges and solutions
 
 ## 🗂️ **Project Structure**
-
-├── analysis_script.R # Complete DESeq2 analysis & visualization pipeline
-├── counts_data.csv # Raw gene count matrix
-├── sample_info.csv # Sample metadata
-├── results/
-│ ├── figures/ # PCA, heatmaps, MA plot, volcano plot
-│ ├── tables/ # DESeq2 result tables (CSV)
-│ └── logs/ # Session info & summaries
-├── README.md # Project documentation
-└── LICENSE # MIT License
-
 ```
 ├── analysis_script.R        # Complete DESeq2 analysis & visualization pipeline
 ├── counts_data.csv          # Raw gene count matrix
@@ -35,8 +24,6 @@ The analysis evaluates transcriptional changes induced by dexamethasone treatmen
 ├── README.md                # Project documentation
 └── LICENSE                  # MIT License
 ```
-
-
 *Note: All analyses were executed from a single R script to ensure reproducibility.*
 
 ## ⚙️ **Installation**
@@ -69,12 +56,10 @@ sample_info.csv
 
 ### 2. Set working directory:
 
-r
 setwd("path/to/project")
 
 ### 3. Run the analysis:
 
-r
 source("analysis_script.R")
 Outputs will be automatically saved in the results/ directory.
 
