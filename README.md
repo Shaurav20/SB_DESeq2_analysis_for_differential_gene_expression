@@ -1,4 +1,4 @@
-# git**DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
+# **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
 
 ## 📌 **Overview**
 
@@ -135,7 +135,7 @@ Analysis summaries
 
 All outputs are stored in the results/ directory.
 
-## 🛠️ Problems Encountered and Solutions
+## 🛠️ Problems and Solutions
 
 ### ❌ Problem 1: Noisy differential expression results
 
