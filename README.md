@@ -24,7 +24,6 @@ The analysis evaluates transcriptional changes induced by dexamethasone treatmen
 ├── README.md                # Project documentation
 └── LICENSE                  # MIT License
 ```
-*Note: All analyses were executed from a single R script to ensure reproducibility.*
 
 ## ⚙️ **Installation**
 
