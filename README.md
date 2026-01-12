@@ -1,4 +1,4 @@
-# **DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
+# **SB DESeq2 Differential Gene Expression Analysis (Dexamethasone Treatment Study)**
 
 ## 📌 **Overview**
 
@@ -48,30 +48,30 @@ BiocManager::install(c(
 
 ## ▶️ **Usage**
 
-### 1. Place input files in the project directory:
+### **1. Place input files in the project directory:**
 
 counts_data.csv
 
 sample_info.csv
 
-### 2. Set working directory:
+### **2. Set working directory:**
 
 setwd("path/to/project")
 
-### 3. Run the analysis:
+### **3. Run the analysis:**
 
 source("analysis_script.R")
 Outputs will be automatically saved in the results/ directory.
 
-## 🧪 Methodology
+## **🧪 Methodology**
 
-### Data Validation
+### **Data Validation**
 
 Matching samples between counts and metadata
 
 Column reordering if necessary
 
-### DESeq2 Workflow
+### **DESeq2 Workflow**
 
 DESeqDataSet construction
 
@@ -79,13 +79,13 @@ Library size and dispersion estimation
 
 Differential expression testing
 
-### Filtering & Normalization
+### **Filtering & Normalization**
 
 Low-count gene filtering
 
 Variance Stabilizing Transformation (VST)
 
-### Visualization
+### **Visualization**
 
 PCA
 
@@ -97,7 +97,7 @@ Volcano plot
 
 Heatmap of top 50 DEGs
 
-### Gene Annotation
+### **Gene Annotation**
 
 Ensembl ID → Gene symbol mapping (human)
 
@@ -142,6 +142,7 @@ All outputs are stored in the results/ directory.
 Low-count genes caused unstable fold changes and weak clustering.
 
 **✅ Solution**
+
 Applied gene filtering
 keep <- rowSums(counts(dds) >= 10) >= 3
 
@@ -158,6 +159,7 @@ The heatmaps were saved as empty PNG files.
 Root Cause: pheatmap() uses grid graphics, which require explicit rendering.
 
 **✅ Solution**
+
 grid::grid.newpage()
 
 **Outcome:** 
