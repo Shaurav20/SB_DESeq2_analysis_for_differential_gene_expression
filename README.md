@@ -63,7 +63,7 @@ setwd("path/to/project")
 source("analysis_script.R")
 Outputs will be automatically saved in the results/ directory.
 
-## **🧪 Methodology**
+## 🧪 **Methodology**
 
 ### **Data Validation**
 
@@ -101,9 +101,9 @@ Heatmap of top 50 DEGs
 
 Ensembl ID → Gene symbol mapping (human)
 
-## 📊 Results
+## 📊 **Results**
 
-### 📈 Generated Outputs
+### 📈 **Generated Outputs**
 
 **Figures (PNG):**
 
@@ -135,9 +135,9 @@ Analysis summaries
 
 All outputs are stored in the results/ directory.
 
-## 🛠️ Problems and Solutions
+## 🛠️ **Problems and Solutions**
 
-### ❌ Problem 1: Noisy differential expression results
+### ❌ **Problem 1: Noisy differential expression results**
 
 Low-count genes caused unstable fold changes and weak clustering.
 
@@ -152,7 +152,7 @@ vsd <- vst(dds, blind = FALSE)
 **Outcome:** 
 Cleaner PCA separation and more biologically meaningful DE genes.
 
-### ❌ Problem 2: Blank heatmap image files
+### ❌ **Problem 2: Blank heatmap image files**
 
 The heatmaps were saved as empty PNG files.
 
@@ -165,7 +165,7 @@ grid::grid.newpage()
 **Outcome:** 
 Heatmaps rendered correctly and reproducibly.
 
-## 📚 References
+## 📚 **References**
 
 Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 2014.
 
@@ -173,11 +173,11 @@ R Core Team (2024). R: A language and environment for statistical computing. htt
 
 Bioconductor Project. https://bioconductor.org/
 
-## 📜 License
+## 📜 **License**
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this code with appropriate attribution.
 
-## 👤 Author
+## 👤 **Author**
 
 Shaurav Bhattacharyya
 
